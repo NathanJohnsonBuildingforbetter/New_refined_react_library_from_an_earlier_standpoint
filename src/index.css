@@ -520,6 +520,11 @@ BOOKS PAGE
   margin-bottom: 0;
 }
 
+.book__selected--title--top {
+  margin-left: 10px;
+  margin-bottom: 0;
+  text-align: left;
+}
 select {
   background-color: #fff;
   border-radius: 4px;
@@ -569,7 +574,7 @@ select {
 
 .book__selected {
   display: flex;
-}
+ }
 
 .book__selected--figure {
   width: 40%;
