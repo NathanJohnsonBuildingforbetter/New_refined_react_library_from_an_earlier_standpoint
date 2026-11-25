@@ -42,8 +42,18 @@ function App() {
 }
 
 function changeQuantity(book, quantity){
-  console.log(book, quantity)
+ setCart(cart.map(item => (item.id === book.id) ? 
+        {          
+          ...item,
+          quantity: +quantity,
+        } : item
+           
+ ))
+ 
+  // console.log(book, quantity)
 }
+
+
   //   console.log(dupeItem)
   //   setCart([...cart,{...book, quantity: 1}])
   // }
@@ -57,8 +67,8 @@ function changeQuantity(book, quantity){
       <Nav />
       <Route path="/" exact component={Home} />
       <Route path="/books" exact render={() => <Books books={books} />} />
-      <Route path="/books/:id"  render={() => <BookInfo books={books} addToCart={addToCart} cart={cart} changeQuantity={changeQuantity}/>} />
-      <Route path="/cart"  render={() => <Cart cart={cart}/>} />
+      <Route path="/books/:id"  render={() => <BookInfo books={books} addToCart={addToCart} cart={cart} />} />
+      <Route path="/cart"  render={() => <Cart cart={cart} changeQuantity={changeQuantity} />} />
       <Footer />
     </div>
     </Router>
