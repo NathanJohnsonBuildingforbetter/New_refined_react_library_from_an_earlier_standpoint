@@ -14,7 +14,7 @@ const findTotal = () => {
   setCartTotal(total);
 };
  const subTotal = () => {
-    
+    // soon to be updated so that it can be implemented. Testing testing 123.
  }
   return (
     <div id="books__body">
