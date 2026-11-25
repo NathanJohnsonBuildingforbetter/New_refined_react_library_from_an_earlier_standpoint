@@ -52,11 +52,16 @@ function changeQuantity(book, quantity){
  
   // console.log(book, quantity)
 }
+function removeItem(item){
+  setCart(cart.filter(book => book.id !== item.id))
 
+}
+function numberOfItems(){
+ let counter = 0;
+ cart.forEach(item => {counter += item.quantity})
+ return counter;
+}
 
-  //   console.log(dupeItem)
-  //   setCart([...cart,{...book, quantity: 1}])
-  // }
   useEffect(() => {
     console.log(cart)
   }, [cart]  )
@@ -64,11 +69,11 @@ function changeQuantity(book, quantity){
   return (
     <Router>
     <div className="App">
-      <Nav />
+      <Nav numberOfItems={numberOfItems()} />
       <Route path="/" exact component={Home} />
       <Route path="/books" exact render={() => <Books books={books} />} />
       <Route path="/books/:id"  render={() => <BookInfo books={books} addToCart={addToCart} cart={cart} />} />
-      <Route path="/cart"  render={() => <Cart cart={cart} changeQuantity={changeQuantity} />} />
+      <Route path="/cart"  render={() => <Cart cart={cart} changeQuantity={changeQuantity} removeItem={removeItem} />} />
       <Footer />
     </div>
     </Router>
