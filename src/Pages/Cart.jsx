@@ -34,9 +34,9 @@ const findTotal = () => {
                 <span className="cart__total">Price</span>
               </div>
               <div className="cart__body">
-                {cart.map((book) => {
+                {cart.map((book, i) => {
                   return (
-                    <div className="cart__item">
+                    <div className="cart__item" key={i}>
                       <div className="cart__book">
                         <img
                           src={book.url}
@@ -101,7 +101,7 @@ const findTotal = () => {
               </div>
               <button
                 className="btn btn__checkout no-cursor"
-                onClick={() => alert(`Haven't done this as of yet :(`)}
+                onClick={() => alert(`Haven't done this as of yet!`)}
               >
                 Proceed to checkout
               </button>
