@@ -3,19 +3,14 @@ import EmptyCart from "../assets/empty_cart.svg";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const Cart = ({ cart, changeQuantity, removeItem }) => {
  const [cartTotal, setCartTotal ] = useState(0)
-  const total = () =>{
-  
- }
-const findTotal = () => {
+
+ useEffect(() => {
   const total = cart.reduce((sum, item) => {
     const price = item.salePrice || item.originalPrice;
     return sum + price * item.quantity;
   }, 0);
 
    setCartTotal(total);
-};
- useEffect(() => {
-  findTotal();
 }, [cart])
 
  

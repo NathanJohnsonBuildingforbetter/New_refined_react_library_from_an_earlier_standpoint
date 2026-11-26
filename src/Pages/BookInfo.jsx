@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import Rating from '../Components/ui/Rating';
 import Price from '../Components/ui/Price';
@@ -7,7 +6,7 @@ import Book from '../Components/ui/Book';
 
 const BookInfo = ({ books, addToCart, cart }) => {
   const { id }= useParams()
-  const book = books.find(book => +book.id == +id)
+  const book = books.find((book) => +book.id === +id)
   // console.log(book)
   // const [added, setAdded] = useState(false);
   function addBookToCart(book){
